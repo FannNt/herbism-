@@ -1,6 +1,6 @@
 import * as t from "drizzle-orm/pg-core";
 import { users } from "./user.schema";
-import { experienceLevelEnum, genderEnum } from "./column.helper";
+import { experienceLevelEnum, genderEnum, timestamps } from "./column.helper";
 
 /*
 
@@ -21,4 +21,5 @@ export const profile = t.pgTable("profiles", {
   healthGoals: t.text().notNull(),
   allergies: t.text().notNull(),
   experienceLevel: experienceLevelEnum().notNull(),
+  ...timestamps,
 });
