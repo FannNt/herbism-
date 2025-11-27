@@ -1,7 +1,8 @@
 import * as t from "drizzle-orm/pg-core";
 import { roleEnum, timestamps } from "./column.helper";
-import { relations } from "drizzle-orm";
+import { Many, relations } from "drizzle-orm";
 import { profile } from "./profile.schema";
+import { plant } from "./plant.schema";
 
 export const user = t.pgTable(
   "users",
@@ -18,6 +19,7 @@ export const user = t.pgTable(
   (table) => [t.uniqueIndex("email_idx").on(table.email)]
 );
 
-export const userRelations = relations(user, ({ one }) => ({
+export const userRelations = relations(user, ({ one, many }) => ({
   profile: one(profile),
+  plants: many(plant),
 }));
