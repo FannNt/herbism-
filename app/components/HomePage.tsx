@@ -1,13 +1,13 @@
 "use client"
 
-import Navbar from '../components/Navbar';
-import HeroPage from '../components/HeroPage';
-import ConsultationSection from '../components/ConsultationSection';
-import FeaturesSection from '../components/ScanSection';
-import PlantCareSection from '../components/PlantCareSection';
-import WirelessPlantSection from '../components/WirelessPlantSection';
-import Footer from '../components/Footer';
-import BackToTopButton from '../components/BackToTopButton';
+import Navbar from './Navbar';
+import HeroPage from './HeroPage';
+import ConsultationSection from './ConsultationSection';
+import FeaturesSection from './ScanSection';
+import PlantCareSection from './PlantCareSection';
+import WirelessPlantSection from './WirelessPlantSection';
+import Footer from './Footer';
+import BackToTopButton from './BackToTopButton';
 import { ThemeProvider, useTheme } from '../context/ThemeContext';
 
 function HomeContent() {
@@ -27,7 +27,7 @@ function HomeContent() {
   );
 }
 
-export default function Home() {
+export default function HomePage() {
   return (
     <ThemeProvider>
       <HomeContent />
