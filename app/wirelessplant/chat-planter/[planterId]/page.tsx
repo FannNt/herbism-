@@ -226,7 +226,7 @@ export default function ChatPlanterPage() {
     return (
       <div className="min-h-screen bg-slate-50 flex items-center justify-center">
         <Navbar />
-        <div className="text-center pt-32">
+        <div className="text-center md:pt-32">
           <Loader2 className="w-10 h-10 animate-spin mx-auto mb-4 text-emerald-500" />
           <p className="text-slate-500">Memuat chat...</p>
         </div>
@@ -274,7 +274,7 @@ export default function ChatPlanterPage() {
       <div className="min-h-screen bg-gradient-to-br from-slate-50 to-gray-100">
         <Navbar />
       
-      <section className="pt-20 pb-0 h-screen flex flex-col">
+      <section className="md:pt-20 pb-0 h-screen flex flex-col">
         <div className="max-w-4xl mx-auto w-full px-4 sm:px-6 flex-1 flex flex-col">
           {/* Header */}
           <motion.div
@@ -305,23 +305,6 @@ export default function ChatPlanterPage() {
                   )}
                 </div>
               </div>
-            </div>
-
-            <div className="flex items-center gap-2">
-              {/* Video Call Button */}
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                onClick={() => alert("Fitur video call akan segera hadir!")}
-                className="w-10 h-10 rounded-xl flex items-center justify-center transition-all hover:bg-slate-100"
-                style={{ color: themeColors.primary }}
-              >
-                <Video className="w-5 h-5" />
-              </motion.button>
-
-              <span className="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-xs font-medium">
-                Inquiry
-              </span>
             </div>
           </motion.div>
 
