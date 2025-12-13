@@ -29,12 +29,14 @@ function LoginContent() {
         1500
       );
       setTimeout(() => {
-        router.push("/");
+        router.push("/profile");
       }, 1500);
     } catch (err) {
       showError(
         "Login Gagal",
-        err instanceof Error ? err.message : "Email atau password salah. Silakan coba lagi."
+        err instanceof Error
+          ? err.message
+          : "Email atau password salah. Silakan coba lagi."
       );
     }
   };
@@ -54,19 +56,17 @@ function LoginContent() {
           router.push("/onboarding");
         }, 2000);
       } else {
-        showSuccess(
-          "Login Berhasil!",
-          "Selamat datang kembali!",
-          1500
-        );
+        showSuccess("Login Berhasil!", "Selamat datang kembali!", 1500);
         setTimeout(() => {
-          router.push("/");
+          router.push("/profile");
         }, 1500);
       }
     } catch (err) {
       showError(
         "Login Google Gagal",
-        err instanceof Error ? err.message : "Terjadi kesalahan saat login dengan Google. Silakan coba lagi."
+        err instanceof Error
+          ? err.message
+          : "Terjadi kesalahan saat login dengan Google. Silakan coba lagi."
       );
     }
   };
