@@ -29,7 +29,7 @@ export default function CheckoutPage() {
   const [orderData, setOrderData] = useState({
     quantity: 1,
     notes: "",
-    buyerPhone: user?.uid || "",
+    buyerPhone: "",
     buyerAddress: ""
   })
 
@@ -87,7 +87,7 @@ export default function CheckoutPage() {
     return (
       <div className="min-h-screen bg-slate-50 flex items-center justify-center">
         <Navbar />
-        <div className="text-center pt-32">
+        <div className="text-center md:pt-32">
           <Loader2 className="w-10 h-10 animate-spin mx-auto mb-4 text-emerald-500" />
           <p className="text-slate-500">Memuat data jasa...</p>
         </div>
@@ -115,7 +115,7 @@ export default function CheckoutPage() {
       <div className="min-h-screen bg-gradient-to-br from-slate-50 to-gray-100 text-slate-900">
         <Navbar />
       
-      <section className="pt-28 pb-16 px-4 sm:px-6">
+      <section className="md:pt-28 pb-16 px-4 sm:px-6">
         <div className="max-w-5xl mx-auto">
           {/* Back Button */}
           <Link href="/wirelessplant">
@@ -190,8 +190,13 @@ export default function CheckoutPage() {
                     <input
                       type="tel"
                       value={orderData.buyerPhone}
-                      onChange={(e) => setOrderData(prev => ({ ...prev, buyerPhone: e.target.value }))}
+                      onChange={(e) => {
+                        const value = e.target.value.replace(/\D/g, '');
+                        setOrderData(prev => ({ ...prev, buyerPhone: value }));
+                      }}
                       required
+                      pattern="[0-9]*"
+                      inputMode="numeric"
                       className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2"
                       placeholder="08123456789"
                     />
