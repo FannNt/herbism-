@@ -89,7 +89,7 @@ export default function PlantCareSection() {
                 }}
               >
                 <Image
-                  src="/Erbis.jpg"
+                  src="/Erbis.png"
                   alt="Erbis - Maskot Herbism"
                   width={280}
                   height={280}
